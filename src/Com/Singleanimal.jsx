@@ -1,8 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Singleanimal = ({animal}) => {
     
-    const {name, age, price_bdt, location, description, type} = animal
+    const {_id, name, description, type} = animal
+
+   
+
 
     return (
         <div>
@@ -13,7 +17,9 @@ const Singleanimal = ({animal}) => {
     <p>{description}</p>
     <h1>{type}</h1>
     <div className="justify-end card-actions">
-      <button className="btn btn-primary">Buy Now</button>
+      <Link to={`/all/${_id}`}>
+            <button className="btn btn-primary">view details</button>
+      </Link>
     </div>
   </div>
 </div>
