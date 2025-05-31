@@ -1,13 +1,17 @@
 import React, { use } from 'react';
 import { Authcontext } from '../Auth/Authcontext';
-import { Navigate } from 'react-router';
+import { Navigate, useLocation } from 'react-router';
 
 const Privaterouter = ({childern}) => {
 
    const {users} = use(Authcontext)
+   
+   const location = useLocation()
+   console.log(location)
+
 
    if(!users){
-    <Navigate to="/signup"></Navigate>
+    return <Navigate to="/signup" state={location.pathname}></Navigate>
    }
 
     return childern

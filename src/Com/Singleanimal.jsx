@@ -5,8 +5,6 @@ const Singleanimal = ({animal}) => {
     
     const {_id, name, description, type} = animal
 
-   
-
 
     return (
         <div>

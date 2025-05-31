@@ -55,6 +55,8 @@ const Navber = () => {
             <li><NavLink to="/">হোম</NavLink></li>
             <li><NavLink to="/all">পশু অনুসন্ধান</NavLink></li>
             <li><NavLink to="/butchers">কসাই ব্রাউজ করুন</NavLink></li>
+            <li><NavLink to="/form">form</NavLink></li>
+            <li><NavLink to="/data">Data</NavLink></li>
             {users && <li><NavLink to="/post-animal">পশু পোস্ট করুন</NavLink></li>}
             {users && <li><NavLink to="/my-posts">আমার পোস্টসমূহ</NavLink></li>}
           </ul>

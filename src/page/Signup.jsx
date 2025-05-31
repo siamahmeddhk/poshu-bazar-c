@@ -1,11 +1,16 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { Authcontext } from '../Auth/Authcontext';
 import { updateProfile } from 'firebase/auth';
 
 const Signup = () => {
 
     const {createuser} = use(Authcontext)
+
+	const location = useLocation()
+	console.log(location)
+	const navi = useNavigate()
+	const from = location.state || '/';
 
 
     const handelsingup = e => {
@@ -17,10 +22,13 @@ const Signup = () => {
         createuser(email, password)
         .then(res=>{
             const user = res.user
+			navi(from)
             return updateProfile(user,{
                 displayName: name,
                 photoURL: url,
             })
+			
+
         })
         
 
